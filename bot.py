@@ -18,11 +18,11 @@ for submission in subreddit.stream.submissions():
         if re.search(r'\bjohn hopkins\b', submission.title, re.IGNORECASE):
             submission.reply('*Johns Hopkins\n\n---\n\n^I ^am ^a ^bot!')
             replied_posts.append(submission.id)
-	    print('Replying to: ', submission.title)
+            print('Replying to: ', submission.title)
         if re.search(r'\bjohn hopkin\b', submission.title, re.IGNORECASE):
             submission.reply('*Johns Hopkin\n\n---\n\n^I ^am ^a ^bot!')
             replied_posts.append(submission.id)
-	    print('Replying to: ', submission.title)
+            print('Replying to: ', submission.title)
 
 with open('replied_posts.txt', 'w') as f:
     for post_id in replied_posts:
