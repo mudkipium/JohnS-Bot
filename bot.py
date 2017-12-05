@@ -1,5 +1,4 @@
 import praw
-import pdb
 import re
 import os
 
@@ -16,8 +15,11 @@ else:
 
 for submission in subreddit.new(limit=5):
     if submission.id not in replied_posts:
-        if re.search('john hopkins', submission.title, re.IGNORECASE):
-            submission.reply('*Johns Hopkins')
+        if re.search(r'\bjohn hopkins\b', submission.title, re.IGNORECASE):
+            submission.reply('*Johns Hopkins\n\n---\n\n^I ^am ^a ^bot!')
+            replied_posts.append(submission.id)
+        if re.search(r'\bjohn hopkin\b', submission.title, re.IGNORECASE):
+            submission.reply('*Johns Hopkin\n\n---\n\n^I ^am ^a ^bot!')
             replied_posts.append(submission.id)
 
 with open('replied_posts.txt', 'w') as f:
