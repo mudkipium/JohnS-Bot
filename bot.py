@@ -13,7 +13,8 @@ else:
         replied_posts = replied_posts.split("\n")
         replied_posts = list(filter(None, replied_posts))
 
-for submission in subreddit.new(limit=5):
+for submission in subreddit.stream.submissions():
+    print('Replying to: ', submission.title)
     if submission.id not in replied_posts:
         if re.search(r'\bjohn hopkins\b', submission.title, re.IGNORECASE):
             submission.reply('*Johns Hopkins\n\n---\n\n^I ^am ^a ^bot!')
