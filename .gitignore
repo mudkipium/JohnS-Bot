@@ -98,5 +98,6 @@ ENV/
 # mypy
 .mypy_cache/
 
-# praw
+# other
 praw.ini
+replied_posts.txt
