@@ -20,11 +20,13 @@ while True:
     try:
         for submission in subreddit.stream.submissions():
             if submission.id not in replied_posts:
-                if re.search(r'\bjohn hopkins\b', submission.title, re.IGNORECASE):
+                if (re.search(r'\bjohn hopkins\b', submission.title, re.IGNORECASE) or
+                    re.search(r'\bjohn hopkins\b', submission.selftext, re.IGNORECASE)):
                     submission.reply('*Johns Hopkins' + signature)
                     replied_posts.append(submission.id)
                     print('Replying to: ', submission.title)
-                if re.search(r'\bjohn hopkin\b', submission.title, re.IGNORECASE):
+                if (re.search(r'\bjohn hopkin\b', submission.title, re.IGNORECASE) or
+                    re.search(r'\bjohn hopkin\b', submission.selftext, re.IGNORECASE)):
                     submission.reply('*Johns Hopkin' + signature)
                     replied_posts.append(submission.id)
                     print('Replying to: ', submission.title)
