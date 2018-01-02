@@ -7,7 +7,7 @@ from praw.models.util import stream_generator
 from praw.models.reddit.comment import Comment
 from praw.models.reddit.submission import Submission
 
-signature = '\n\n---\n\n^I ^am ^a ^bot!'
+signature = '\n\n---\n\n^I ^am ^a ^bot! ^I ^am ^defender ^of ^the ^[S](https://www.jhu.edu).'
 
 reddit = praw.Reddit('johnSbot')
 subreddit = reddit.subreddit('all')
